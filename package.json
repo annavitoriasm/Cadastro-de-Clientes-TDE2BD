@@ -1,0 +1,15 @@
+{
+  "name": "cadastro-de-clientes",
+  "version": "1.0.0",
+  "description": "TDE 2 Banco de Dados - ADS 2º período;",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "tailwindcss": "^3.4.14"
+  }
+}
