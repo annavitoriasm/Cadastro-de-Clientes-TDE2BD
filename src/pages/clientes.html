@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Empréstimos | Home</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="../css/clientes.css">
+    <link rel="stylesheet" href="../css/output.css">
+</head>
+<body>
+
+     <div id="content">
+
+        <!-- "---NAVBAR---" -->
+        <nav class="navbar close">
+            <div class="sidebar">
+                <button class="open-nav" id="open-nav">
+                    <i class="fa-solid fa-bars"></i>
+                </button>
+    
+                <div class="user">
+                    <i class="fa-solid fa-circle-user"></i>
+                    <span class="txt">User</span>
+                </div>
+    
+                <ul>
+                    <li class="active">
+                        <a href="../../index.html">
+                            <i class="fa-solid fa-house"></i>
+                            <span class="txt">Home</span>
+                        </a>
+                    </li>
+        
+                    <li class="item-menu">
+                        <a href="../emprestimo.html">
+                            <i class="fa-solid fa-sack-dollar"></i>
+                            <span class="txt">Empréstimos</span>
+                        </a>
+                    </li>
+        
+                    <li>
+                        <a href="../clientes.html">
+                            <i class="fa-solid fa-user-group"></i>
+                            <span class="txt">Clientes</span>
+                        </a>
+                    </li>
+        
+                </ul>
+            </div>
+    
+            <div class="logout">
+                <button id="logout"> 
+                    <i class="fa-solid fa-right-from-bracket"></i>
+                    <span class="txt">Logout</span>
+                </button>
+            </div>
+        </nav>
+    
+        <div id="container">
+            <button>Cadastrar Cliente <i class="fa-solid fa-plus"></i></button>
+
+            <div id="customer-list">
+                <table>
+                    <td>Nome</td>
+                    <td>CPF/CNPJ</td>
+                    <td>Contato</td>
+                    <td>Empréstimos</td>
+                    <td>Status</td>
+                    </tr>
+                    <tr>
+                        <td>Ted</td>
+                        <td>22</td>
+                        <td>Estudante</td>
+                        <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                    </tr>
+        
+                </table>
+            </div>
+        
+            <dialog id="dialog-register">
+                <div id="register-customer">
+                    <input type="text" name="nome">
+                    <input type="text" name="cpf">
+                    <input type="date" name="dataNasc">
+                    <input type="text" name="email">
+                    <input type="text" name="telefone">
+                    <input type="text" name="endereco">
+                    <input type="text" name="compResidencia">
+                    <input type="text" name="compRenda">
+                </div>
+            </dialog>
+        
+            <dialog id="dialog-customer">
+                <div id="customer">
+                    <div>
+                        <label for="">Nome</label>
+                        <div id="container-info"></div>
+                    </div>
+                    <div>
+                        <label for="">CPF/CNPJ</label>
+                        <div id="container-info"></div>
+                    </div>
+                    <div>
+                        <label for="">DataNasc</label>
+                        <div id="container-info"></div>
+                    </div>
+                    <div>
+                        <label for="">Email</label>
+                        <div id="container-info"></div>
+                    </div>
+                    <div>
+                        <label for="">Telefone</label>
+                        <div id="container-info"></div>
+                    </div>
+                    <div>
+                        <label for="">Endereço</label>
+                        <div id="container-info"></div>
+                    </div>
+                    <div>
+                        <label for="">Status</label>
+                        <div id="container-info"></div>
+                    </div>
+            
+                </div>
+            </dialog>
+        </div>
+
+     </div>
+</body>
+<script src="../script/sidebar.js"></script>
+<script src="../script/loading.js"></script>
+</html>

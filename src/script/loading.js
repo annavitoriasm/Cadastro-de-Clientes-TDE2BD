@@ -5,5 +5,5 @@ function loading() {
     content.classList.add("show");
 }
 window.onload = function() {
-    setTimeout(loading, 2500);
+    setTimeout(loading, 2000);
 };
