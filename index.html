@@ -39,16 +39,16 @@
                     </li>
         
                     <li class="item-menu">
-                        <a href="src/pages/emprestimo.html">
-                            <i class="fa-solid fa-sack-dollar"></i>
-                            <span class="txt">Empréstimos</span>
-                        </a>
-                    </li>
-        
-                    <li>
                         <a href="src/pages/clientes.html">
                             <i class="fa-solid fa-user-group"></i>
                             <span class="txt">Clientes</span>
+                        </a>
+                    </li>
+
+                    <li class="item-menu">
+                        <a href="src/pages/emprestimo.html">
+                            <i class="fa-solid fa-sack-dollar"></i>
+                            <span class="txt">Empréstimos</span>
                         </a>
                     </li>
         
@@ -64,11 +64,39 @@
         </nav>
     
         <div id="container">
-            <h1>AWAWA</h1>
+            <div id="container-title">
+                <img id="logoIntro" src="src/public/img/logoIntro.gif" alt="">
+                <img id="logoIntroEstatica" src="src/public/img/logoIntroEstatica.png">
+            </div>
+
+            <div id="container-registrer">
+                <div id="header-registrer">
+                    <button>Cadastrar Cliente <i class="fa-solid fa-plus"></i></button>
+                </div>
+                <div id="costumer-list">
+                    <table>
+                        <td>Nome</td>
+                        <td>CPF/CNPJ</td>
+                        <td>Contato</td>
+                        <td>Empréstimos</td>
+                        <td>Status</td>
+                        </tr>
+                        <tr>
+                            <td>Ted</td>
+                            <td>22</td>
+                            <td>Estudante</td>
+                            <td><i class="fa-solid fa-ellipsis-vertical"></i></td>
+                        </tr>
+            
+                    </table>
+                </div>
+            </div>
+
         </div>
 
      </div>
 </body>
 <script src="src/script/sidebar.js"></script>
 <script src="src/script/loading.js"></script>
+<script src="src/script/logoIntro.js"></script>
 </html>

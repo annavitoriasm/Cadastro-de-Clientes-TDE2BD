@@ -588,6 +588,10 @@ video {
   }
 }
 
+.block {
+  display: block;
+}
+
 .table {
   display: table;
 }
