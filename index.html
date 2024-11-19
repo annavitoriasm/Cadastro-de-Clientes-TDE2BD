@@ -70,14 +70,14 @@
             </div>
 
             <div id="container-registrer">
-                <div id="costumer-list">
+                <div id="costumer-list" class="w-[940px]">
                     <div id="header-registrer">
                         <h2 id="title-list" class="text-3xl font-semibold text-black">
                             Lista de Clientes
                         </h2>
-                        <button id="create-costumer"><i class="fa-solid fa-plus p-0"></i></button>
+                        <button onclick="openC()" id="open-c"><i class="fa-solid fa-plus p-0"></i></button>
                     </div>
-                    <div id="container-table">
+                    <div id="container-table" class="shadow-xl">
                         <table class="table-auto border-separate border-spacing-2">
                         <thead>
                             <tr class="text-start">
@@ -113,15 +113,16 @@
      </div>
 
              
-     <div id="create-of" class="w-full h-full flex fixed justify-center content-center p-20 pb-8 pt-8">
-        <div class="w-1000 flex-col content-center justify-center items-center rounded-lg bg-white p-8 pt-12">
-            <div class="flex w-full items-center justify-end mt-[-50px] mr-[-20px]">
-              <button id="close-register" class="p-2">
-                <i class="fa-solid fa-x"></i>
+     <div id="create" class="hidden w-full h-full fixed justify-center content-center p-20 pb-0 pt-10">
+        <div class="w-1000 shadow-xl flex-col content-center justify-center items-center rounded-lg bg-white p-8 pt-12">
+            <div class="flex w-[100%] place-items-center justify-between mt-[-35px] mr-[-20px] mb-6 border-b-[1.5px] pb-3">
+                <h3 class="text-2xl font-bold">Cadastrar novo cliente</h3>
+              <button onclick="closeC()" id="close-c" class="p-2 ">
+                <i class="fa-solid fa-x text-[14px]"></i>
               </button>
             </div>
           
-            <form class="flex-rol justify-center">
+            <form class="flex-rol justify-center mt-2">
                 <div class="group mb-5">
           
                   <div class="w-full flex ml-20 content-center justify-center items-center place-content-center gap-4">
@@ -204,8 +205,8 @@
               </div>
 
               <div class="flex justify-end content-end w-full">
-                <button type="submit" class="rounded-lg px-5 py-2.5 text-center text-sm font-medium text-blackfocus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto">Cancelar</button>
-                <button type="submit" class="rounded-lg bg-[rgb(17,17,17)] px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none focus:ring-4 focus:ring-blue-300 sm:w-auto">Adicionar</button>
+                <button onclick="closeC()" type="submit" class="rounded-lg px-5 py-2.5 text-center text-sm font-medium text-blackfocus:outline-none sm:w-auto">Cancelar</button>
+                <button type="submit" class="rounded-lg bg-[rgb(17,17,17)] px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none sm:w-auto">Adicionar</button>
               </div>
               
             </form>

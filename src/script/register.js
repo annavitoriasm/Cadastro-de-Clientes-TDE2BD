@@ -1,11 +1,11 @@
-const buttonOp = document.getElementById("create-costumer");
-const buttonCl = document.getElementById("close-register");
-const modal = document.querySelector("dialog");
+const modal = document.getElementById("create");
 
-buttonOp.onclick = function() {
-    modal.showModal();
-};
+function openC(){
+    modal.classList.remove('hidden');
+    modal.classList.add('flex');
+}
 
-buttonCl.onclick = function() {
-    modal.close();
-};
+function closeC(){
+    modal.classList.remove('flex');
+    modal.classList.add('hidden');
+}
