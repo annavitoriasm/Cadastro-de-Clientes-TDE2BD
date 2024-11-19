@@ -256,7 +256,7 @@ txt{
     width: 35px;
     height: 35px;
     color: white;
-    background-color: #000000;
+    background-color: rgb(17,17,17);
     border-radius: 6px;
     font-family: "Roboto", sans-serif;
     text-align: center;
@@ -301,4 +301,9 @@ txt{
 
 .table-auto td, .table-auto th {
     text-align: left;
+}
+
+
+#create-of{
+    display: none;
 }
