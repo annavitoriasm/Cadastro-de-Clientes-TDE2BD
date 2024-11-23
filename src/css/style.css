@@ -26,6 +26,21 @@ body{
     display: flex;
 }
 
+input[type="number"] {
+    -moz-appearance: textfield;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type="number"] {
+    -ms-appearance: textfield;
+}
+
+
 /* '---LOADING---' */
 
 #content {
@@ -86,6 +101,7 @@ nav{
     position: fixed;
     overflow: hidden;
     transition: all 0.75s;
+    z-index: 9999999999;
 }
 
 .close{
@@ -288,12 +304,6 @@ txt{
     padding: 20px;
 }
 
-#size-info{
-    max-width: 130px;
-    height: 20px;
-    overflow: hidden;
-}
-
 .fa-person{
     font-size: 25px;
 }
@@ -301,5 +311,3 @@ txt{
 .table-auto td, .table-auto th {
     text-align: left;
 }
-
-  
