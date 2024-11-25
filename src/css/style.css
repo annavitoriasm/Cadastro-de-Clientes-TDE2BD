@@ -311,3 +311,43 @@ txt{
 .table-auto td, .table-auto th {
     text-align: left;
 }
+
+.opDiv{
+ animation: opendiv 0.5s linear forwards;
+}
+@keyframes opendiv{
+    0%{
+        opacity: 90%;
+        margin-top: 600px;
+    }
+
+    50%{
+        opacity: 100%;
+        margin-top: 300px;
+    }
+
+    100%{
+        opacity: 100%;
+        margin-top: 0px;
+    }
+}
+
+.clDiv{
+    animation: closediv 0.5s linear forwards;
+   }
+   @keyframes closediv{
+    0%{
+        opacity: 100%;
+        margin-top: 0px;
+    }   
+   
+       50%{
+           opacity: 100%;
+           margin-top: 300px;
+       }
+
+       100%{
+        opacity: 90%;
+        margin-top: 600px;
+    }
+   }
