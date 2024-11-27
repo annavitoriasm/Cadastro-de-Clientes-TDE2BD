@@ -1,5 +1,5 @@
 <?php
-require_once('db_conection.php');
+require_once '../db/sql_connection.php';
 
 
 # Conexão ao banco de dados (Supabase)
@@ -8,7 +8,7 @@ try {
 	// make a database connection
 	$connection = new PDO(dsn: $dsn, username: $dbUser, password: $dbPass, options: [
         PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC, 
+        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
     ]);
 
 	if ($pdo) {
@@ -37,7 +37,7 @@ $Data = array_map(function($value) {
 }, $Data);
 
 
-if ($connection) echo "Pemba";
+if ($connection) {echo "Pemba";}
 # Definição e preparação da query SQL
 $sql = "INSERT INTO cadastros
         (nome, pessoa_fisica, cpf_cnpj, contato, email, cep, endereco,  numero, complemento, observacoes)
@@ -59,5 +59,3 @@ $stmt->execute([
     ':complemento' => $Data['complemento'] ?? '',
     ':observacoes' => $Data['observacoes'] ?? ''
 ]);
-
-?>
