@@ -1,17 +1,18 @@
 const modal = document.getElementById("create");
+const container = document.getElementById("containerCreate");
 
 function openC(){
-    modal.classList.remove('clDiv');
+    container.classList.remove('clDiv');
     modal.classList.remove('hidden');
     modal.classList.add('flex');
-    modal.classList.add('opDiv')
+    container.classList.add('opDiv')
 }
 
 function closeC(){
-    modal.classList.remove('opDiv');
-    modal.classList.add('clDiv');
+    container.classList.remove('opDiv');
+    container.classList.add('clDiv');
     setTimeout(function() {
         modal.classList.add('hidden');
         modal.classList.remove('flex');
-      }, 1000);
+      }, 800);
 }

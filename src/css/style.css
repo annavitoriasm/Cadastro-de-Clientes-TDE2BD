@@ -333,21 +333,21 @@ txt{
 }
 
 .clDiv{
-    animation: closediv 0.5s linear forwards;
+    animation: closediv 0.7s linear forwards;
    }
    @keyframes closediv{
     0%{
         opacity: 100%;
         margin-top: 0px;
-    }   
-   
-       50%{
-           opacity: 100%;
+    }
+
+       100%{
+           opacity: 90%;
            margin-top: 300px;
        }
 
        100%{
         opacity: 90%;
-        margin-top: 600px;
+        margin-top: 1200px;
     }
    }
