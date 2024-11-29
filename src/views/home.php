@@ -108,9 +108,10 @@
 
 
                         <!-- --- ESTRUTURA CLIENTE - INICIO --- -->
+                        <?php foreach ($data as $client): ?>
                         <div onclick="openView()"
                             class="h-[45px] text-start font-normal cursor-pointer flex justify-left pl-2 items-center hover:bg-[rgba(233,233,233,0.32)] rounded-lg">
-                            <?php foreach ($data as $client): ?>
+
                             <div class="mr-10 py-2 max-w-[30px] min-w-[30px] flex justify-center items-center text-start">
                             <?= $client['id'] ?>
                             </div>
@@ -139,7 +140,6 @@
                                 </div>
                             </div>
 
-                            <?php endforeach; ?>
 
                             <button id="dropdownDelayButton2" data-dropdown-toggle="dropdownDelay2" data-dropdown-delay="500" data-dropdown-trigger="hover" class="w-11 h-11 rounded-full">
                                 <i id="open-options" class="fa-solid fa-ellipsis-vertical cursor-pointer pl-5"></i>
@@ -160,7 +160,7 @@
                             </div>
                         </div>
                         <!-- --- ESTRUTURA CLIENTE - FIM --- -->
-
+                        <?php endforeach; ?>
 
 
                     </div>
