@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CadCli. | Home</title>
-    <link rel="stylesheet" href="../css/output.css">
+    <link rel="stylesheet" href="src/css/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="src/css/style.css">
 </head>
 
 <body onload="loading()">
@@ -62,8 +62,8 @@
 
         <div id="container">
             <div id="container-title">
-                <img id="logoIntro" src="../public/img/logoIntro.gif" alt="">
-                <img id="logoIntroEstatica" src="../public/img/logoIntroEstatica.png" alt="Logo da CadCli">
+                <img id="logoIntro" src="src/public/img/logoIntro.gif" alt="">
+                <img id="logoIntroEstatica" src="src/public/img/logoIntroEstatica.png" alt="Logo da CadCli">
             </div>
 
             <div id="container-registrer">
@@ -396,13 +396,13 @@
 
 
 </body>
-<script src="../script/sidebar.js"></script>
-<script src="../script/loading.js"></script>
-<script src="../script/logoIntro.js"></script>
-<script src="../script/register.js"></script>
-<script src="../script/profile.js"></script>
-<script src="../script/view.js"></script>
+<script src="src/script/sidebar.js"></script>
+<script src="src/script/loading.js"></script>
+<script src="src/script/logoIntro.js"></script>
+<script src="src/script/register.js"></script>
+<script src="src/script/profile.js"></script>
+<script src="src/script/view.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
+<script src="src/path/to/flowbite/dist/flowbite.min.js"></script>
 
 </html>

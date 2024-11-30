@@ -14,7 +14,7 @@
 
         public function getAll()
         {
-            $sqlSelect = $this->connection->query("SELECT *FROM {$this->table}");
+            $sqlSelect = $this->connection->query("SELECT *FROM {$this->table} ORDER BY id ASC");
             return $sqlSelect->fetchAll(PDO::FETCH_ASSOC);
         }
     }

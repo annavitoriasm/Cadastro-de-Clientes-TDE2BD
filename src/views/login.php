@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/src/css/output.css">
+    <link rel="stylesheet" href="src/css/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -28,7 +28,7 @@
                   <input type="email" name="email" id="email" autocomplete="email" required placeholder="Usuário ou email" class="block w-full rounded-md border-l-0 bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 sm:text-sm/6" />
                 </div>
               </div>
-  
+
               <div>
                 <div class="flex items-center justify-between">
                   <div class="text-sm"></div>
@@ -40,12 +40,12 @@
                   <input type="password" name="password" id="password" autocomplete="current-password" required placeholder="Senha" class="block w-full rounded-md bg-white px-3 py-1.5 text-base text-gray-900 outline outline-1 -outline-offset-1 outline-gray-300 placeholder:text-gray-400 sm:text-sm/6" />
                 </div>
               </div>
-  
+
               <div>
                 <button type="submit" class="flex w-full justify-center rounded-md bg-[rgba(10,10,10,0.96)] px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm transition-colors hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">Entrar</button>
               </div>
             </form>
-  
+
             <div class="mt-2 flex w-full items-center justify-between gap-16 p-4">
               <div class="flex items-center gap-2">
                 <div class="flex h-5 items-center">
@@ -57,9 +57,9 @@
             </div>
           </div>
         </div>
-  
-  
+
+
       </div>
-    
+
 </body>
 </html>
