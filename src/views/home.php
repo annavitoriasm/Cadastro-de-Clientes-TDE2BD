@@ -61,7 +61,7 @@
         </nav>
 
         <div id="container">
-            <div id="container-title">
+            <div id="container-title" class="w-screen h-screen items-center">
                 <img id="logoIntro" src="src/public/img/logoIntro.gif" alt="">
                 <img id="logoIntroEstatica" src="src/public/img/logoIntroEstatica.png" alt="Logo da CadCli">
             </div>
@@ -109,7 +109,7 @@
 
                         <!-- --- ESTRUTURA CLIENTE - INICIO --- -->
                         <?php foreach ($data as $client): ?>
-                        <div onclick="opOptions()"
+                        <div
                             class="h-[45px] text-start font-normal cursor-pointer flex justify-left pl-2 items-center hover:bg-[rgba(233,233,233,0.32)] rounded-lg">
 
                             <div class="mr-10 py-2 max-w-[30px] min-w-[30px] flex justify-center items-center text-start">
