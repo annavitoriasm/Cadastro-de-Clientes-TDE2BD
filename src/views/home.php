@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>CadCli. | Home</title>
-    <link rel="stylesheet" href="src/css/output.css">
+    <link rel="stylesheet" href="../css/output.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
         integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link href="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.css" rel="stylesheet" />
-    <link rel="stylesheet" href="src/css/style.css">
+    <link rel="stylesheet" href="../css/style.css">
 </head>
 
 <body onload="loading()">
@@ -62,8 +62,8 @@
 
         <div id="container">
             <div id="container-title">
-                <img id="logoIntro" src="src/public/img/logoIntro.gif" alt="">
-                <img id="logoIntroEstatica" src="src/public/img/logoIntroEstatica.png" alt="Logo da CadCli">
+                <img id="logoIntro" src="../public/img/logoIntro.gif" alt="">
+                <img id="logoIntroEstatica" src="../public/img/logoIntroEstatica.png" alt="Logo da CadCli">
             </div>
 
             <div id="container-registrer">
@@ -109,7 +109,7 @@
 
                         <!-- --- ESTRUTURA CLIENTE - INICIO --- -->
                         <?php foreach ($data as $client): ?>
-                        <div onclick="openView()"
+                        <div onclick="opOptions()"
                             class="h-[45px] text-start font-normal cursor-pointer flex justify-left pl-2 items-center hover:bg-[rgba(233,233,233,0.32)] rounded-lg">
 
                             <div class="mr-10 py-2 max-w-[30px] min-w-[30px] flex justify-center items-center text-start">
@@ -147,7 +147,7 @@
                             <!-- Dropdown menu -->
                             <div id="dropdownDelay2" class="z-10 hidden absolute bg-white divide-y divide-gray-100 rounded-lg shadow h-min w-min dark:bg-gray-700">
                                 <ul class="py-2 pb-0 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
-                                    <li>
+                                    <li onclick="opOptions()">
                                         <a href="#" class="flex text-sm ml-[-10px] px-4 py-2 items-center text-center h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Visualizar</a>
                                     </li>
                                     <li>
@@ -322,7 +322,7 @@
                 </div>
             </div>
 
-            <button onclick="closeC()" id="close-c" class="w-8 h-8 mt-[-5px] rounded-full hover:bg-gray-100 transition-colors">
+            <button onclick="clOptions()" id="close-c" class="w-8 h-8 mt-[-5px] rounded-full hover:bg-gray-100 transition-colors">
                 <i class="fa-solid fa-x text-[14px] ml-[-2.5px]"></i>
             </button>
         </div>
@@ -396,13 +396,13 @@
 
 
 </body>
-<script src="/src/script/sidebar.js"></script>
-<script src="/src/script/loading.js"></script>
-<script src="/src/script/logoIntro.js"></script>
-<script src="/src/script/register.js"></script>
-<script src="/src/script/profile.js"></script>
-<script src="/src/script/options.js"></script>
-<script src="/src/script/view.js"></script>
+<script src="../script/sidebar.js"></script>
+<script src="../script/loading.js"></script>
+<script src="../script/logoIntro.js"></script>
+<script src="../script/register.js"></script>
+<script src="../script/profile.js"></script>
+<script src="../script/view.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+<script src="../path/to/flowbite/dist/flowbite.min.js"></script>
 
 </html>
