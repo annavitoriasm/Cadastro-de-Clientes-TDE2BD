@@ -137,14 +137,16 @@ nav{
 
 .fa-circle-user{
     margin-left: 10px;
-    font-size: 36px;
+    width: 36px;
+    height: 36px;
+    border-radius: 100%;
 }
 
 a{
     display: flex;
     text-decoration: none;
     color: rgb(63, 63, 63);
-    gap: 1rem;
+    gap: 0.7rem;
     align-items: center;
     justify-content: center;
     transition: all 0.75s;
@@ -211,6 +213,8 @@ ul, i{
     margin-left: 12px;
     transition: all 0.75s;
     text-align: start;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .logout{
@@ -226,11 +230,6 @@ ul, i{
     align-items: center;
     gap: 2rem;
     display: flex;
-}
-
-txt{
-    white-space: nowrap;
-    text-overflow: ellipsis;
 }
 
 #container{
@@ -259,7 +258,7 @@ txt{
 }
 
 #container-registrer{
-    margin-top: 100px;
+    margin-top: -20px;
     width: 100%;
     font-size: 16px;
     display: flex;
@@ -283,7 +282,7 @@ txt{
     max-height: max-content;
     font-size: 14px;
     padding: 20px;
-    margin-bottom: 150px;
+    margin-bottom: 200px;
 }
 
 #header-registrer{
@@ -313,41 +312,52 @@ txt{
 }
 
 .opDiv{
- animation: opendiv 0.5s linear forwards;
+ animation: opendiv 0.5s ease-in-out forwards;
 }
-@keyframes opendiv{
-    0%{
-        opacity: 90%;
-        margin-top: 600px;
+@keyframes opendiv {
+    from {
+        opacity: 1;
+        transform: translate(0, +100vh);
     }
-
-    50%{
-        opacity: 100%;
-        margin-top: 300px;
-    }
-
-    100%{
-        opacity: 100%;
-        margin-top: 0px;
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
     }
 }
+
 
 .clDiv{
-    animation: closediv 0.7s linear forwards;
+    animation: closediv 0.7s ease-in-out forwards;
    }
    @keyframes closediv{
-    0%{
-        opacity: 100%;
-        margin-top: 0px;
+    from {
+        opacity: 1;
+        transform: translate(0, 0);
     }
-
-       100%{
-           opacity: 90%;
-           margin-top: 300px;
-       }
-
-       100%{
-        opacity: 90%;
-        margin-top: 1200px;
+    to {
+        opacity: 1;
+        transform: translate(0, +100vh);
     }
    }
+
+   .listCustomer {
+    animation: scrollAni ease-in-out;
+    animation-timeline: view();
+    animation-range: entry 0% cover 40%;
+}
+
+   @keyframes scrollAni{
+    from {
+        opacity: 0;
+        scale: 0.5;
+    }
+    to {
+        opacity: 1;
+        scale: 1;
+    }
+   }
+
+
+
+
+

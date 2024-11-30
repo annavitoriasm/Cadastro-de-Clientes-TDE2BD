@@ -14,5 +14,5 @@ function closeC(){
     setTimeout(function() {
         modal.classList.add('hidden');
         modal.classList.remove('flex');
-      }, 800);
+      }, 600);
 }

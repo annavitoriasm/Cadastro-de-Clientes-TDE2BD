@@ -29,22 +29,29 @@
                 </button>
 
                 <div class="user">
-                    <i class="fa-solid fa-circle-user"></i>
+                    <img src="" alt="profile" class="fa-circle-user">
                     <span class="txt">User</span>
                 </div>
 
                 <ul>
-                    <li class="active">
-                        <a href="index.html">
+                    <li id="HC" class="active">
+                        <a href="#">
                             <i class="fa-solid fa-house"></i>
                             <span class="txt">Home</span>
                         </a>
                     </li>
 
-                    <li class="item-menu">
-                        <a href="#container-registrerl">
-                            <i class="fa-solid fa-user-group"></i>
+                    <li id="LC" class="item-menu">
+                        <a href="#container-registrer">
+                        <i class="fa-solid fa-user-group"></i>
                             <span class="txt">Clientes</span>
+                        </a>
+                    </li>
+
+                    <li id="AC" class="item-menu" onclick="openC()">
+                        <a>
+                        <i class="fa-solid fa-square-plus text-[30px] ml-[-4px]"></i>
+                            <span class="txt ml-[-6px]">Novo Cliente</span>
                         </a>
                     </li>
 
@@ -66,7 +73,7 @@
                 <img id="logoIntroEstatica" src="src/public/img/logoIntroEstatica.png" alt="Logo da CadCli">
             </div>
 
-            <div id="container-registrer">
+            <div id="container-registrer" class="listCustomer">
                 <div id="costumer-list" class="w-[940px]">
                     <div id="header-registrer">
                         <h2 id="title-list" class="text-3xl font-semibold text-black">
@@ -147,14 +154,14 @@
                             <!-- Dropdown menu -->
                             <div id="dropdownDelay2" class="z-10 hidden absolute bg-white divide-y divide-gray-100 rounded-lg shadow h-min w-min dark:bg-gray-700">
                                 <ul class="py-2 pb-0 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
-                                    <li onclick="opOptions()">
-                                        <a href="#" class="flex text-sm ml-[-10px] px-4 py-2 items-center text-center h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Visualizar</a>
+                                    <li id="opInfo">
+                                        <a class="flex text-sm ml-[-10px] px-4 py-2 items-center text-center h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Visualizar</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="flex text-sm ml-[-10px] px-4 py-2 items-center text-center h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Editar</a>
+                                        <a class="flex text-sm ml-[-10px] px-4 py-2 items-center text-center h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Editar</a>
                                     </li>
                                     <li>
-                                        <a href="#" class="flex text-sm ml-[-10px] px-4 py-2 h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Excluir</a>
+                                        <a class="flex text-sm ml-[-10px] px-4 py-2 h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Excluir</a>
                                     </li>
                                 </ul>
                             </div>
@@ -294,7 +301,7 @@
 
     <div id="infoCustomer"
     class="hidden w-screen h-screen fixed top-0 left-0 justify-center items-center p-20 pb-0 pt-0 bg-slate-300 bg-opacity-50 backdrop-blur-md">
-    <div class="w-[700px] h-[430px] shadow-xl flex-col justify-center items-center rounded-lg bg-[rgb(253,253,253)] p-8 pl-10 pr-10 pt-12">
+    <div id="infoCont" class="clDiv w-[700px] h-[430px] shadow-xl flex-col justify-center items-center rounded-lg bg-[rgb(253,253,253)] p-8 pl-10 pr-10 pt-12">
         <div class="flex w-full place-items-center justify-between mt-[-30px] mr-[-20px] mb-3 border-b-[1.5px] pb-5">
             <div class="flex items-center">
                 <div>
@@ -322,7 +329,7 @@
                 </div>
             </div>
 
-            <button onclick="clOptions()" id="close-c" class="w-8 h-8 mt-[-5px] rounded-full hover:bg-gray-100 transition-colors">
+            <button id="clInfo" class="w-8 h-8 mt-[-5px] rounded-full hover:bg-gray-100 transition-colors">
                 <i class="fa-solid fa-x text-[14px] ml-[-2.5px]"></i>
             </button>
         </div>
@@ -402,6 +409,7 @@
 <script src="src/script/register.js"></script>
 <script src="src/script/profile.js"></script>
 <script src="src/script/view.js"></script>
+<script src="src/script/animationScroll.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
 <script src="src/path/to/flowbite/dist/flowbite.min.js"></script>
 

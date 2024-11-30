@@ -1,14 +1,25 @@
-const view = document.getElementById("infoCustomer");
+document.addEventListener('DOMContentLoaded', function () {
+    const modal = document.getElementById("infoCustomer");
+    const container = document.getElementById("infoCont");
+    const openBtn = document.getElementById("opInfo");
+    const closeBtn = document.getElementById("clInfo");
 
-function opOptions() {
-
-    if (view.classList.contains('hidden')) {
-        view.classList.remove('hidden');
-        view.classList.add('flex');
+    function openC() {
+        container.classList.remove('clDiv');
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        container.classList.add('opDiv');
     }
-}
 
-function clOptions() {
-    view.classList.remove('flex');
-    view.classList.add('hidden');
-}
+    function closeC() {
+        container.classList.remove('opDiv');
+        container.classList.add('clDiv');
+        setTimeout(function() {
+            modal.classList.add('hidden');
+            modal.classList.remove('flex');
+        }, 600);
+    }
+
+    openBtn.addEventListener('click', openC); 
+    closeBtn.addEventListener('click', closeC);
+});
