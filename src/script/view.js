@@ -20,6 +20,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }, 600);
     }
 
-    openBtn.addEventListener('click', openC); 
+    openBtn.addEventListener('click', openC);
     closeBtn.addEventListener('click', closeC);
 });

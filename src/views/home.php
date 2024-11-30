@@ -27,10 +27,9 @@
                 <button class="open-nav" id="open-nav">
                     <i class="fa-solid fa-bars"></i>
                 </button>
-
                 <div class="user">
-                    <img src="" alt="profile" class="fa-circle-user">
-                    <span class="txt">User</span>
+                    <img src="<?= $_SESSION['imgUrl']; ?>" class="fa-solid fa-circle-user" alt = "Foto de perfil do admin"></p>
+                    <span class="txt"><?= $_SESSION['username']; ?></span>
                 </div>
 
                 <ul>
@@ -60,10 +59,12 @@
             </div>
 
             <div class="logout">
-                <button id="logout">
-                    <i class="fa-solid fa-right-from-bracket"></i>
-                    <span class="txt">Logout</span>
-                </button>
+                <form action="index.php?controller=login&action=logout" method="POST">
+                    <button type="submit" id="logout">
+                        <i class="fa-solid fa-right-from-bracket"></i>
+                        <span class="txt">Logout</span>
+                    </button>
+                </form>
             </div>
         </nav>
 
@@ -146,7 +147,6 @@
                                     <?= $client['email'] ?>
                                 </div>
                             </div>
-
 
                             <button id="dropdownDelayButton2" data-dropdown-toggle="dropdownDelay2" data-dropdown-delay="500" data-dropdown-trigger="hover" class="w-11 h-11 rounded-full">
                                 <i id="open-options" class="fa-solid fa-ellipsis-vertical cursor-pointer pl-5"></i>

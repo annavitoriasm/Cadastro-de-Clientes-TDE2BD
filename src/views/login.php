@@ -20,6 +20,11 @@
 
 
           <div class="mt-5 sm:mx-auto sm:w-full sm:max-w-sm">
+          <?php if (isset($error)): ?>
+            <p class="mb-4 text-center text-sm text-red-500 font-semibold">
+              <?= $error ?>
+            </p>
+            <?php endif; ?>
             <form class="space-y-6" action="index.php?action=login" method="POST">
               <div>
                 <div class="mt-2 flex">
