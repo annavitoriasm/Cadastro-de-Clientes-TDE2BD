@@ -28,7 +28,7 @@
                     <i class="fa-solid fa-bars"></i>
                 </button>
                 <div class="user">
-                    <img src="<?= $_SESSION['imgUrl']; ?>" class="fa-solid fa-circle-user" alt = "Foto de perfil do admin"></p>
+                    <img src="<?= $_SESSION['imgUrl']; ?>" class="fa-solid fa-circle-user" alt = "Foto de perfil do admin" draggable="false"></p>
                     <span class="txt"><?= $_SESSION['username']; ?></span>
                 </div>
 
@@ -70,8 +70,7 @@
 
         <div id="container">
             <div id="container-title" class="w-screen h-screen items-center">
-                <img id="logoIntro" src="src/public/img/logoIntro.gif" alt="">
-                <img id="logoIntroEstatica" src="src/public/img/logoIntroEstatica.png" alt="Logo da CadCli">
+                <img id="logoIntro" src="src/public/img/logoIntro.gif" alt="logo da CadCli" draggable="false">
             </div>
 
             <div id="container-registrer" class="listCustomer">
@@ -411,6 +410,5 @@
 <script src="src/script/view.js"></script>
 <script src="src/script/animationScroll.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-<script src="src/path/to/flowbite/dist/flowbite.min.js"></script>
 
 </html>

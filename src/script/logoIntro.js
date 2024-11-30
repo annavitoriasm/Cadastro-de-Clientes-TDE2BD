@@ -1,14 +1,9 @@
-const tempoGif = 5000;
+function desabilitarBotaoDireito() {
+    const imagem = document.getElementById('logoIntro');
 
-const gifElement = document.getElementById("logoIntro");
-const imagemEstaticaElement = document.getElementById("logoIntroEstatica");
-
-function trocarPorImagemEstatica() {
-    gifElement.src = "public/img/logoIntroEstatica.png"; 
-
-    gifElement.style.display = "none";
-
-    imagemEstaticaElement.style.display = "block";
+    imagem.addEventListener('contextmenu', function(event) {
+        event.preventDefault();
+    });
 }
 
-setTimeout(trocarPorImagemEstatica, tempoGif);
+document.addEventListener('DOMContentLoaded', desabilitarBotaoDireito);
