@@ -144,13 +144,13 @@
                             </div>
                         </div>
 
-                        <button id="dropdownDelayButton2" data-dropdown-toggle="dropdownDelay2" data-dropdown-delay="500" data-dropdown-trigger="hover" class="w-11 h-11 rounded-full">
+                        <button id="dropdownDelayButton<?= $client['id'] ?>" data-dropdown-toggle="dropdownDelay<?= $client['id'] ?>" data-dropdown-delay="500" data-dropdown-trigger="hover" class="w-11 h-11 rounded-full">
                             <i id="open-options" class="fa-solid fa-ellipsis-vertical cursor-pointer pl-5"></i>
                         </button>
                         <!-- Dropdown menu -->
-                        <div id="dropdownDelay2" class="z-10 hidden absolute bg-white divide-y divide-gray-100 rounded-lg shadow h-min w-min dark:bg-gray-700">
+                        <div id="dropdownDelay<?= $client['id'] ?>" class="z-10 hidden absolute bg-white divide-y divide-gray-100 rounded-lg shadow h-min w-min dark:bg-gray-700">
                             <ul class="py-2 pb-0 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
-                                <li id="opInfo">
+                                <li id="opInfo<?= $client['id'] ?>">
                                     <a class="flex text-sm ml-[-10px] px-4 py-2 items-center text-center h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Visualizar</a>
                                 </li>
                                 <li>
@@ -160,6 +160,110 @@
                                     <a class="flex text-sm ml-[-10px] px-4 py-2 h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Excluir</a>
                                 </li>
                             </ul>
+                        </div>
+                    </div>
+
+                    <!-- -- INFO CLIENTE -- -->
+
+                    <div id="infoCustomer<?= $client['id'] ?>"
+                        class="hidden w-screen h-screen fixed top-0 left-0 justify-center items-center p-20 pb-0 pt-0 bg-slate-300 bg-opacity-50 backdrop-blur-md">
+                        <div id="infoCont<?= $client['id'] ?>" class="clDiv w-[700px] h-[430px] shadow-xl flex-col justify-center items-center rounded-lg bg-[rgb(253,253,253)] p-8 pl-10 pr-10 pt-12">
+                            <div class="flex w-full place-items-center justify-between mt-[-30px] mr-[-20px] mb-3 border-b-[1.5px] pb-5">
+                                <div class="flex items-center">
+                                    <div>
+                                        <div class="flex mt-6">
+                                            <h3 class="text-2xl font-bold"><?= $client['nome'] ?></h3>
+                                            <button id="dropdownDelayButton<?= $client['id'] ?>" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="500" data-dropdown-trigger="hover" class="mt-[-5px] w-11 h-11 rounded-full ml-7 hover:bg-gray-100 transition-colors">
+                                                <i class="fa-solid fa-pen-to-square text-[22px]"></i>
+                                            </button>
+                                            <!-- Dropdown menu -->
+                                            <div id="dropdownDelay" class="z-10 hidden absolute bg-white divide-y divide-gray-100 rounded-lg shadow h-min w-min dark:bg-gray-700">
+                                                <ul class="py-2 pb-0 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
+                                                    <li>
+                                                        <a href="#" class="flex ml-[-5px] px-4 py-2 items-center text-center h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Editar</a>
+                                                    </li>
+                                                    <li>
+                                                        <a href="#" class="flex ml-[-5px] px-4 py-2 h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Excluir</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+                                        </div>
+                                        <div class="flex items-center h-full w-min mt-[-5px]">
+                                            <p class="text-gray-900 font-normal text-sm">ID: </p>
+                                            <label id="idCustomer" class="text-gray-900 text-sm ml-1 font-normal"><?= $client['id'] ?></label>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button id="clInfo<?= $client['id'] ?>" class="w-8 h-8 mt-[-5px] rounded-full hover:bg-gray-100 transition-colors">
+                                    <i class="fa-solid fa-x text-[14px] ml-[-2.5px]"></i>
+                                </button>
+                            </div>
+
+                            <div class="flex gap-5">
+                                <div class="relative z-0 w-96 mb-5 group">
+                                    <label class="text-gray-600 font-normal text-sm">Cpf/Cnpj:</label>
+                                    <div class="mt-1 block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none">
+                                        <label id="cpfCnpj" class="absolute text-lg mt-8 text-gray-900 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]">
+                                        <?= $client['cpf_cnpj'] ?>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="relative z-0 w-96 mb-5 group">
+                                    <label class="text-gray-600 font-normal text-sm">Contato:</label>
+                                    <div class="mt-1 block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none">
+                                        <label id="contato" class="absolute text-lg mt-8 text-gray-900 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]">
+                                        <?= $client['contato'] ?>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex gap-5">
+                                <div class="relative z-0 w-44 mb-5 group">
+                                    <label class="text-gray-600 font-normal text-sm">Cep:</label>
+                                    <div class="mt-1 block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none">
+                                        <label id="cep" class="absolute text-lg mt-8 text-gray-900 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]">
+                                        <?= $client['cep'] ?>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="relative z-0 w-full mb-5 group">
+                                    <label class="text-gray-600 font-normal text-sm">Endereço:</label>
+                                    <div class="mt-1 block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none">
+                                        <label id="endereco" class="absolute text-lg mt-8 text-gray-900 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]">
+                                        <?= $client['endereco'] ?>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="relative z-0 w-28 mb-5 group">
+                                    <label class="text-gray-600 font-normal text-sm">Número:</label>
+                                    <div class="mt-1 block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none">
+                                        <label id="numeroEnd" class="absolute text-lg mt-8 text-gray-900 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]">
+                                        <?= $client['numero'] ?>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="flex-col">
+                                <div class="relative z-0 w-full mb-5 group">
+                                    <label class="text-gray-600 font-normal text-sm">Complemento:</label>
+                                    <div class="mt-1 block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none">
+                                        <label id="complementoEnd" class="absolute text-lg mt-8 text-gray-900 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]">
+                                        <?= $client['complemento'] ?>
+                                        </label>
+                                    </div>
+                                </div>
+                                <div class="relative z-0 w-full group mb-2">
+                                    <label class="text-gray-600 font-normal text-sm">Observações:</label>
+                                    <div class="mt-1 block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none">
+                                        <label id="observacoes" class="absolute text-lg mt-8 text-gray-900 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]">
+                                        <?= $client['observacoes'] ?>
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 <?php endforeach; ?>
@@ -188,7 +292,7 @@
             <div
                 class="flex w-[100%] place-items-center justify-between mt-[-5px] mr-[-20px] mb-10 border-b-[1.5px] pb-5">
                 <h3 class="text-2xl font-bold">Cadastrar novo cliente</h3>
-                <button onclick="closeC()" id="close-c" class="w-8 h-8 mt-[-5px] rounded-full hover:bg-gray-100 transition-colors">
+                <button onclick="closeC()" id="clInfo" class="w-8 h-8 mt-[-5px] rounded-full hover:bg-gray-100 transition-colors">
                 <i class="fa-solid fa-x text-[14px] ml-[-2.5px]"></i>
                 </button>
             </div>
@@ -298,112 +402,6 @@
         </div>
 
     </div>
-
-
-    <!-- -- Visualizar Cliente -- -->
-
-    <div id="infoCustomer"
-    class="hidden w-screen h-screen fixed top-0 left-0 justify-center items-center p-20 pb-0 pt-0 bg-slate-300 bg-opacity-50 backdrop-blur-md">
-    <div id="infoCont" class="clDiv w-[700px] h-[430px] shadow-xl flex-col justify-center items-center rounded-lg bg-[rgb(253,253,253)] p-8 pl-10 pr-10 pt-12">
-        <div class="flex w-full place-items-center justify-between mt-[-30px] mr-[-20px] mb-3 border-b-[1.5px] pb-5">
-            <div class="flex items-center">
-                <div>
-                    <div class="flex mt-6">
-                        <h3 class="text-2xl font-bold"><?= $client['nome'] ?></h3>
-                        <button id="dropdownDelayButton" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="500" data-dropdown-trigger="hover" class="mt-[-5px] w-11 h-11 rounded-full ml-7 hover:bg-gray-100 transition-colors">
-                            <i class="fa-solid fa-pen-to-square text-[22px]"></i>
-                        </button>
-                        <!-- Dropdown menu -->
-                        <div id="dropdownDelay" class="z-10 hidden absolute bg-white divide-y divide-gray-100 rounded-lg shadow h-min w-min dark:bg-gray-700">
-                            <ul class="py-2 pb-0 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
-                                <li>
-                                    <a href="#" class="flex ml-[-5px] px-4 py-2 items-center text-center h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Editar</a>
-                                </li>
-                                <li>
-                                    <a href="#" class="flex ml-[-5px] px-4 py-2 h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Excluir</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="flex items-center h-full w-min mt-[-5px]">
-                        <p class="text-gray-900 font-normal text-sm">ID: </p>
-                        <label id="idCustomer" class="text-gray-900 text-sm ml-1 font-normal"><?= $client['id'] ?></label>
-                    </div>
-                </div>
-            </div>
-
-            <button id="clInfo" class="w-8 h-8 mt-[-5px] rounded-full hover:bg-gray-100 transition-colors">
-                <i class="fa-solid fa-x text-[14px] ml-[-2.5px]"></i>
-            </button>
-        </div>
-
-        <div class="flex gap-5">
-            <div class="relative z-0 w-96 mb-5 group">
-                <label class="text-gray-600 font-normal text-sm">Cpf/Cnpj:</label>
-                <div class="mt-1 block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none">
-                    <label id="cpfCnpj" class="absolute text-lg mt-8 text-gray-900 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]">
-                    <?= $client['cpf_cnpj'] ?>
-                    </label>
-                </div>
-            </div>
-            <div class="relative z-0 w-96 mb-5 group">
-                <label class="text-gray-600 font-normal text-sm">Contato:</label>
-                <div class="mt-1 block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none">
-                    <label id="contato" class="absolute text-lg mt-8 text-gray-900 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]">
-                    <?= $client['contato'] ?>
-                    </label>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex gap-5">
-            <div class="relative z-0 w-44 mb-5 group">
-                <label class="text-gray-600 font-normal text-sm">Cep:</label>
-                <div class="mt-1 block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none">
-                    <label id="cep" class="absolute text-lg mt-8 text-gray-900 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]">
-                    <?= $client['cep'] ?>
-                    </label>
-                </div>
-            </div>
-            <div class="relative z-0 w-full mb-5 group">
-                <label class="text-gray-600 font-normal text-sm">Endereço:</label>
-                <div class="mt-1 block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none">
-                    <label id="endereco" class="absolute text-lg mt-8 text-gray-900 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]">
-                    <?= $client['endereco'] ?>
-                    </label>
-                </div>
-            </div>
-            <div class="relative z-0 w-28 mb-5 group">
-                <label class="text-gray-600 font-normal text-sm">Número:</label>
-                <div class="mt-1 block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none">
-                    <label id="numeroEnd" class="absolute text-lg mt-8 text-gray-900 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]">
-                    <?= $client['numero'] ?>
-                    </label>
-                </div>
-            </div>
-        </div>
-
-        <div class="flex-col">
-            <div class="relative z-0 w-full mb-5 group">
-                <label class="text-gray-600 font-normal text-sm">Complemento:</label>
-                <div class="mt-1 block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none">
-                    <label id="complementoEnd" class="absolute text-lg mt-8 text-gray-900 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]">
-                    <?= $client['complemento'] ?>
-                    </label>
-                </div>
-            </div>
-            <div class="relative z-0 w-full group mb-2">
-                <label class="text-gray-600 font-normal text-sm">Observações:</label>
-                <div class="mt-1 block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none">
-                    <label id="observacoes" class="absolute text-lg mt-8 text-gray-900 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]">
-                    <?= $client['observacoes'] ?>
-                    </label>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
-
 
 </body>
 <script src="src/script/sidebar.js"></script>
