@@ -29,7 +29,7 @@
                 </button>
                 <div class="user">
                     <img src="<?= $_SESSION['imgUrl']; ?>" class="fa-solid fa-circle-user" alt = "Foto de perfil do admin" draggable="false"></p>
-                    <span class="txt"><?= $_SESSION['username']; ?></span>
+                    <span class="txtUser"><?= $_SESSION['username']; ?></span>
                 </div>
 
                 <ul>
@@ -121,25 +121,25 @@
                         </div>
 
                         <div class="mr-3 py-2 max-w-[260px] min-w-[260px] flex items-center font-bold justify-start">
-                            <div class="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                            <div id="opInfo<?= $client['id'] ?>" class="w-full overflow-hidden text-ellipsis whitespace-nowrap">
                                 <?= $client['nome'] ?>
                             </div>
                         </div>
 
                         <div class="text-start mr-8 py-2 max-w-[100px] min-w-[100px]">
-                            <div class="overflow-hidden whitespace-nowrap">
+                            <div id="opInfo<?= $client['id'] ?>" class="overflow-hidden whitespace-nowrap">
                                 <?= $client['cpf_cnpj'] ?>
                             </div>
                         </div>
 
                         <div class="text-start mr-8 py-2 max-w-[120px] min-w-[100px]">
-                            <div class="overflow-hidden whitespace-nowrap">
+                            <div id="opInfo<?= $client['id'] ?>" class="overflow-hidden whitespace-nowrap">
                                 <?= $client['contato'] ?>
                             </div>
                         </div>
 
                         <div class="text-start mr-1 py-2 max-w-[190px] min-w-[190px]">
-                            <div class="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                            <div id="opInfo<?= $client['id'] ?>" class="w-full overflow-hidden text-ellipsis whitespace-nowrap">
                                 <?= $client['email'] ?>
                             </div>
                         </div>
@@ -157,7 +157,7 @@
                                     <a class="flex text-sm ml-[-10px] px-4 py-2 items-center text-center h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Editar</a>
                                 </li>
                                 <li>
-                                    <a class="flex text-sm ml-[-10px] px-4 py-2 h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Excluir</a>
+                                    <a href="index.php?controller=clients&action=del&id=<?= $client['id'] ?>" class="flex text-sm ml-[-10px] px-4 py-2 h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Excluir</a>
                                 </li>
                             </ul>
                         </div>
@@ -166,8 +166,8 @@
                     <!-- -- INFO CLIENTE -- -->
 
                     <div id="infoCustomer<?= $client['id'] ?>"
-                        class="hidden w-screen h-screen fixed top-0 left-0 justify-center items-center p-20 pb-0 pt-0 bg-slate-300 bg-opacity-50 backdrop-blur-md">
-                        <div id="infoCont<?= $client['id'] ?>" class="clDiv w-[700px] h-[430px] shadow-xl flex-col justify-center items-center rounded-lg bg-[rgb(253,253,253)] p-8 pl-10 pr-10 pt-12">
+                        class="hidden w-full h-full fixed top-0 left-0 justify-center items-center p-20 pb-0 pt-0 bg-slate-300 bg-opacity-50 backdrop-blur-md">
+                        <div id="infoCont<?= $client['id'] ?>" class="clDiv w-[900px] h-[490px] shadow-xl flex-col justify-center items-center rounded-lg bg-[rgb(253,253,253)] p-8 pl-10 pr-10 pt-12">
                             <div class="flex w-full place-items-center justify-between mt-[-30px] mr-[-20px] mb-3 border-b-[1.5px] pb-5">
                                 <div class="flex items-center">
                                     <div>
@@ -183,7 +183,7 @@
                                                         <a href="#" class="flex ml-[-5px] px-4 py-2 items-center text-center h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Editar</a>
                                                     </li>
                                                     <li>
-                                                        <a href="#" class="flex ml-[-5px] px-4 py-2 h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Excluir</a>
+                                                        <a href="index.php?controller=clients&action=del&id=<?= $client['id'] ?>" class="flex ml-[-5px] px-4 py-2 h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Excluir</a>
                                                     </li>
                                                 </ul>
                                             </div>
@@ -200,7 +200,7 @@
                                 </button>
                             </div>
 
-                            <div class="flex gap-5">
+                            <div class="flex gap-5 mt-10 px-8">
                                 <div class="relative z-0 w-96 mb-5 group">
                                     <label class="text-gray-600 font-normal text-sm">Cpf/Cnpj:</label>
                                     <div class="mt-1 block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none">
@@ -219,7 +219,7 @@
                                 </div>
                             </div>
 
-                            <div class="flex gap-5">
+                            <div class="flex gap-5 mt-3 px-8">
                                 <div class="relative z-0 w-44 mb-5 group">
                                     <label class="text-gray-600 font-normal text-sm">Cep:</label>
                                     <div class="mt-1 block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none">
@@ -246,8 +246,8 @@
                                 </div>
                             </div>
 
-                            <div class="flex-col">
-                                <div class="relative z-0 w-full mb-5 group">
+                            <div class="flex-col mt-3 px-8">
+                                <div class="relative z-0 w-full mb-8 group">
                                     <label class="text-gray-600 font-normal text-sm">Complemento:</label>
                                     <div class="mt-1 block py-2.5 px-0 w-full bg-transparent border-0 border-b-2 border-gray-600 appearance-none">
                                         <label id="complementoEnd" class="absolute text-lg mt-8 text-gray-900 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0]">
@@ -292,12 +292,12 @@
             <div
                 class="flex w-[100%] place-items-center justify-between mt-[-5px] mr-[-20px] mb-10 border-b-[1.5px] pb-5">
                 <h3 class="text-2xl font-bold">Cadastrar novo cliente</h3>
-                <button onclick="closeC()" id="clInfo" class="w-8 h-8 mt-[-5px] rounded-full hover:bg-gray-100 transition-colors">
-                <i class="fa-solid fa-x text-[14px] ml-[-2.5px]"></i>
+                <button onclick="closeC()" id="clInfo" class="w-8 h-8 rounded-full flex items-center justify-center text-[14px] hover:bg-gray-100 transition-colors">
+                    <i class="fa-solid fa-x"></i>
                 </button>
             </div>
 
-            <form class="flex-rol justify-center mt-2 p-10 pt-0 pb-6">
+            <form class="flex-rol justify-center mt-2 p-10 pt-0 pb-6" method="POST" action="index.php?controller=clients&action=add">
 
                     <div class="flex gap-5 mt-5">
                         <div class="relative z-0 w-full mb-5 group">
@@ -311,16 +311,16 @@
                         </div>
                         <div class="relative z-0 w-96 mb-5 group">
                             <label class="sr-only">Tipo de Pessoa</label>
-                            <select id="underline_select"
+                            <select name="pessoa_select"
                                 class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-gray-800 appearance-none dark:text-black dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-900 peer">
-                                <option value="fisica" class="text-gray-900">Pessoa Física</option>
-                                <option value="juridica" class="text-gray-900">Pessoa Jurídica</option>
+                                <option value="CPF" class="text-gray-900 border-0">Pessoa Física</option>
+                                <option value="CNPJ" class="text-gray-900">Pessoa Jurídica</option>
                             </select>
                         </div>
                     </div>
                     <div class="flex gap-5">
                         <div class="relative z-0 w-96 mb-5 group">
-                            <input type="number" name="floating_email" id="floating_email"
+                            <input type="number" name="cpf_cnpj" id="cpf_cnpj"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
                                 placeholder=" " required />
                             <label
@@ -328,9 +328,9 @@
                                 CPF/CNPJ</label>
                         </div>
                         <div class="relative z-0 w-80 mb-5 group">
-                            <input type="number" name="contato" id="contato"
+                            <input type="text" name="contato" id="contato" maxlength="15"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
-                                placeholder=" " required />
+                                placeholder="" required />
                             <label
                                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                 Contato</label>
@@ -348,7 +348,7 @@
                         <div class="relative z-0 w-44 mb-5 group">
                             <input type="number" name="cep" id="cep"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
-                                placeholder=" " required />
+                                placeholder="" required />
                             <label
                                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                 CEP</label>
@@ -374,7 +374,7 @@
                         <div class="relative z-0 w-full mb-5 group">
                             <input type="text" name="complementoend" id="complementoend"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
-                                placeholder=" " required />
+                                placeholder="" />
                             <label
                                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                 Complemento</label>
@@ -382,7 +382,7 @@
                         <div class="relative z-0 w-full mb-5 group">
                             <input type="text" name="observacoes" id="observacoes"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
-                                placeholder=" " required />
+                                placeholder="" />
                             <label
                                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
                                 Observações</label>
@@ -392,7 +392,7 @@
                     <div class="flex justify-end content-end w-full">
                         <button onclick="closeC()" type="submit"
                             class="rounded-lg px-5 py-2.5 text-center text-sm font-medium text-blackfocus:outline-none sm:w-auto">Cancelar</button>
-                        <button type="submit"
+                        <button type="submit" id="btn-create"
                             class="rounded-lg bg-[rgb(17,17,17)] px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none sm:w-auto">Adicionar</button>
                     </div>
 
@@ -406,11 +406,10 @@
 </body>
 <script src="src/script/sidebar.js"></script>
 <script src="src/script/loading.js"></script>
-<script src="src/script/disableRightClick.js"></script>
 <script src="src/script/register.js"></script>
 <script src="src/script/profile.js"></script>
 <script src="src/script/view.js"></script>
 <script src="src/script/animationScroll.js"></script>
+<script src="src/script/disableRightClick.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
-
 </html>
