@@ -73,109 +73,113 @@
                 <img id="logoIntro" src="src/public/img/logoIntro.gif" alt="logo da CadCli" draggable="false">
             </div>
 
+            <!-- --- VISUALIZAÇÃO DE CLIENTES --- -->
             <div id="container-registrer" class="listCustomer">
-                <div id="costumer-list" class="w-[940px]">
-                    <div id="header-registrer">
-                        <h2 id="title-list" class="text-3xl font-semibold text-black">
-                            Lista de Clientes
-                        </h2>
-                        <button onclick="openC()" id="open-c"><i class="fa-solid fa-plus p-0"></i></button>
-                    </div>
+    <?php if (count($data) > 0): ?>
+        <div id="costumer-list" class="w-[940px]">
+            <div id="header-registrer">
+                <h2 id="title-list" class="text-3xl font-semibold text-black">
+                    Lista de Clientes
+                </h2>
+                <button onclick="openC()" id="open-c"><i class="fa-solid fa-plus p-0"></i></button>
+            </div>
 
-                    <div id="container-table" class="shadow-xl">
-
-                        <div class="w-full flex flex-row justify-start items-start">
-                            <div class="text-start font-normal flex justify-center items-center">
-                                <div
-                                    class="mr-10 ml-2 py-2 w-[30px] flex justify-center items-center font-medium text-start">
-                                    ID
-                                </div>
-                                <div class="mr-0 py-2 w-[300px] flex items-center font-medium justify-start">
-                                    <div class="w-full overflow-hidden text-ellipsis whitespace-nowrap">
-                                        Nome
-                                    </div>
-                                </div>
-                                <div class="text-start ml-[-30px] mr-8 py-2 w-[100px]">
-                                    <div class="overflow-hidden whitespace-nowrap font-medium">
-                                        CPF/CNPJ
-                                    </div>
-                                </div>
-                                <div class="text-start mr-9 py-2 w-[100px]">
-                                    <div class="overflow-hidden whitespace-nowrap font-medium">
-                                        Contato
-                                    </div>
-                                </div>
-                                <div class="text-start mr-5 py-2 w-[200px]">
-                                    <div class="w-full overflow-hidden text-ellipsis whitespace-nowrap font-medium">
-                                        Email
-                                    </div>
-                                </div>
+            <div id="container-table" class="shadow-xl">
+                <div class="w-full flex flex-row justify-start items-start">
+                    <div class="text-start font-normal flex justify-center items-center">
+                        <div class="mr-10 ml-2 py-2 w-[30px] flex justify-center items-center font-medium text-start">
+                            ID
+                        </div>
+                        <div class="mr-0 py-2 w-[300px] flex items-center font-medium justify-start">
+                            <div class="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                                Nome
                             </div>
                         </div>
-
-
-                        <!-- --- ESTRUTURA CLIENTE - INICIO --- -->
-                        <?php foreach ($data as $client): ?>
-                        <div
-                            class="h-[45px] text-start font-normal cursor-pointer flex justify-left pl-2 items-center hover:bg-[rgba(233,233,233,0.32)] rounded-lg">
-
-                            <div class="mr-10 py-2 max-w-[30px] min-w-[30px] flex justify-center items-center text-start">
-                            <?= $client['id'] ?>
-                            </div>
-
-                            <div class="mr-3 py-2 max-w-[260px] min-w-[260px] flex items-center font-bold justify-start">
-                                <div class="w-full overflow-hidden text-ellipsis whitespace-nowrap">
-                                    <?= $client['nome'] ?>
-                                </div>
-                            </div>
-
-                            <div class="text-start mr-8 py-2 max-w-[100px] min-w-[100px]">
-                                <div class="overflow-hidden whitespace-nowrap">
-                                    <?= $client['cpf_cnpj'] ?>
-                                </div>
-                            </div>
-
-                            <div class="text-start mr-8 py-2 max-w-[120px] min-w-[100px]">
-                                <div class="overflow-hidden whitespace-nowrap">
-                                    <?= $client['contato'] ?>
-                                </div>
-                            </div>
-
-                            <div class="text-start mr-1 py-2 max-w-[190px] min-w-[190px]">
-                                <div class="w-full overflow-hidden text-ellipsis whitespace-nowrap">
-                                    <?= $client['email'] ?>
-                                </div>
-                            </div>
-
-                            <button id="dropdownDelayButton2" data-dropdown-toggle="dropdownDelay2" data-dropdown-delay="500" data-dropdown-trigger="hover" class="w-11 h-11 rounded-full">
-                                <i id="open-options" class="fa-solid fa-ellipsis-vertical cursor-pointer pl-5"></i>
-                            </button>
-                            <!-- Dropdown menu -->
-                            <div id="dropdownDelay2" class="z-10 hidden absolute bg-white divide-y divide-gray-100 rounded-lg shadow h-min w-min dark:bg-gray-700">
-                                <ul class="py-2 pb-0 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
-                                    <li id="opInfo">
-                                        <a class="flex text-sm ml-[-10px] px-4 py-2 items-center text-center h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Visualizar</a>
-                                    </li>
-                                    <li>
-                                        <a class="flex text-sm ml-[-10px] px-4 py-2 items-center text-center h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Editar</a>
-                                    </li>
-                                    <li>
-                                        <a class="flex text-sm ml-[-10px] px-4 py-2 h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Excluir</a>
-                                    </li>
-                                </ul>
+                        <div class="text-start ml-[-30px] mr-8 py-2 w-[100px]">
+                            <div class="overflow-hidden whitespace-nowrap font-medium">
+                                CPF/CNPJ
                             </div>
                         </div>
-                        <!-- --- ESTRUTURA CLIENTE - FIM --- -->
-                        <?php endforeach; ?>
-
-
+                        <div class="text-start mr-9 py-2 w-[100px]">
+                            <div class="overflow-hidden whitespace-nowrap font-medium">
+                                Contato
+                            </div>
+                        </div>
+                        <div class="text-start mr-5 py-2 w-[200px]">
+                            <div class="w-full overflow-hidden text-ellipsis whitespace-nowrap font-medium">
+                                Email
+                            </div>
+                        </div>
                     </div>
                 </div>
+
+                <!-- --- ESTRUTURA CLIENTE - INICIO --- -->
+                <?php foreach ($data as $client): ?>
+                    <div class="h-[45px] text-start font-normal cursor-pointer flex justify-left pl-2 items-center hover:bg-[rgba(233,233,233,0.32)] rounded-lg">
+                        <div class="mr-10 py-2 max-w-[30px] min-w-[30px] flex justify-center items-center text-start">
+                            <?= $client['id'] ?>
+                        </div>
+
+                        <div class="mr-3 py-2 max-w-[260px] min-w-[260px] flex items-center font-bold justify-start">
+                            <div class="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                                <?= $client['nome'] ?>
+                            </div>
+                        </div>
+
+                        <div class="text-start mr-8 py-2 max-w-[100px] min-w-[100px]">
+                            <div class="overflow-hidden whitespace-nowrap">
+                                <?= $client['cpf_cnpj'] ?>
+                            </div>
+                        </div>
+
+                        <div class="text-start mr-8 py-2 max-w-[120px] min-w-[100px]">
+                            <div class="overflow-hidden whitespace-nowrap">
+                                <?= $client['contato'] ?>
+                            </div>
+                        </div>
+
+                        <div class="text-start mr-1 py-2 max-w-[190px] min-w-[190px]">
+                            <div class="w-full overflow-hidden text-ellipsis whitespace-nowrap">
+                                <?= $client['email'] ?>
+                            </div>
+                        </div>
+
+                        <button id="dropdownDelayButton2" data-dropdown-toggle="dropdownDelay2" data-dropdown-delay="500" data-dropdown-trigger="hover" class="w-11 h-11 rounded-full">
+                            <i id="open-options" class="fa-solid fa-ellipsis-vertical cursor-pointer pl-5"></i>
+                        </button>
+                        <!-- Dropdown menu -->
+                        <div id="dropdownDelay2" class="z-10 hidden absolute bg-white divide-y divide-gray-100 rounded-lg shadow h-min w-min dark:bg-gray-700">
+                            <ul class="py-2 pb-0 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
+                                <li id="opInfo">
+                                    <a class="flex text-sm ml-[-10px] px-4 py-2 items-center text-center h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Visualizar</a>
+                                </li>
+                                <li>
+                                    <a class="flex text-sm ml-[-10px] px-4 py-2 items-center text-center h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Editar</a>
+                                </li>
+                                <li>
+                                    <a class="flex text-sm ml-[-10px] px-4 py-2 h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Excluir</a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                <?php endforeach; ?>
+                <!-- --- ESTRUTURA CLIENTE - FIM --- -->
             </div>
         </div>
-    </div>
-
-    </div>
+    <?php else: ?>
+        <div class="w-full h-screen flex flex-col content-center items-center justify-center">
+            <img id="noCustomer" src="src/public/img/CustomerNull-anim.gif" class="h-56 mt-[-30px]" alt="Nenhum cliente cadastrado" draggable="false">
+            <h1 class="text-3xl font-bold text-black mt-[-35px]">
+                Você ainda não possui clientes cadastrados!</h1>
+            <p class="text-sm text-gray-700 font-regular mt-4">
+                Clique no botão abaixo para iniciar</p>
+            <button onclick="openC()" class="mt-3 flex w-52 justify-center rounded-md bg-[rgba(10,10,10,0.96)] hover:scale-105 transition-all px-3 py-1.5 text-sm/6 font-semibold text-white shadow-sm hover:bg-black focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
+                Novo cliente
+            </button>
+        </div>
+    <?php endif; ?>
+</div>
+<!-- --- VISUALIZAÇÃO DE CLIENTES - FIM --- -->
 
 
     <div id="create" class="hidden w-full h-full fixed items-center justify-center content-center p-20 pb-0 pt-0 bg-slate-300 bg-opacity-50 backdrop-blur-md">
@@ -404,7 +408,7 @@
 </body>
 <script src="src/script/sidebar.js"></script>
 <script src="src/script/loading.js"></script>
-<script src="src/script/logoIntro.js"></script>
+<script src="src/script/disableRightClick.js"></script>
 <script src="src/script/register.js"></script>
 <script src="src/script/profile.js"></script>
 <script src="src/script/view.js"></script>
