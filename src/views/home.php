@@ -311,7 +311,7 @@
                         </div>
                         <div class="relative z-0 w-96 mb-5 group">
                             <label class="sr-only">Tipo de Pessoa</label>
-                            <select name="pessoa_select"
+                            <select name="pessoa_select" id="tipoPessoa"
                                 class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-gray-800 appearance-none dark:text-black dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-900 peer">
                                 <option value="CPF" class="text-gray-900 border-0">Pessoa Física</option>
                                 <option value="CNPJ" class="text-gray-900">Pessoa Jurídica</option>
@@ -320,7 +320,7 @@
                     </div>
                     <div class="flex gap-5">
                         <div class="relative z-0 w-96 mb-5 group">
-                            <input type="number" name="cpf_cnpj" id="cpf_cnpj"
+                            <input type="text" name="cpf_cnpj" id="cpf_cnpjAdd"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
                                 placeholder=" " required />
                             <label
@@ -328,7 +328,7 @@
                                 CPF/CNPJ</label>
                         </div>
                         <div class="relative z-0 w-80 mb-5 group">
-                            <input type="text" name="contato" id="contato" maxlength="15"
+                            <input type="text" name="contato" id="contatoAdd" maxlength="15"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
                                 placeholder="" required />
                             <label
@@ -346,7 +346,7 @@
                     </div>
                     <div class="flex gap-5">
                         <div class="relative z-0 w-44 mb-5 group">
-                            <input type="number" name="cep" id="cep"
+                            <input type="text" name="cep" id="cepAdd"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
                                 placeholder="" required />
                             <label
@@ -362,7 +362,7 @@
                                 Endereço</label>
                         </div>
                         <div class="relative z-0 w-28 mb-5 group">
-                            <input type="number" name="numeroend" id="numeroend"
+                            <input type="number" name="numeroend" id="numeroendAdd" data-mask="0000"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
                                 placeholder=" " required />
                             <label
@@ -404,6 +404,9 @@
     </div>
 
 </body>
+<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.mask/1.14.16/jquery.mask.js"></script>
 <script src="src/script/sidebar.js"></script>
 <script src="src/script/loading.js"></script>
 <script src="src/script/register.js"></script>
@@ -411,5 +414,5 @@
 <script src="src/script/view.js"></script>
 <script src="src/script/animationScroll.js"></script>
 <script src="src/script/disableRightClick.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/flowbite@2.5.2/dist/flowbite.min.js"></script>
+<script src="src/script/sanitizeFields.js"></script>
 </html>

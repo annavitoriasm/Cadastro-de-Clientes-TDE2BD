@@ -15,4 +15,8 @@ function closeC(){
         modal.classList.add('hidden');
         modal.classList.remove('flex');
       }, 600);
+
+    document.querySelectorAll('input').forEach(input => {
+        input.value = '';
+    });
 }
