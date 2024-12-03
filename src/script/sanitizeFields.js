@@ -5,7 +5,7 @@ $(document).ready(function () {
     $('#cpf_cnpjAdd').mask('000.000.000-00', { reverse: true });
 
     $('#tipoPessoa').change(function () {
-        const selectedValue = $(this).val();
+        let selectedValue = $(this).val();
 
         if (selectedValue === 'CPF') {
             $('#cpf_cnpjAdd').unmask().mask('000.000.000-00', { reverse: true });
@@ -14,7 +14,7 @@ $(document).ready(function () {
         }
     });
 
-    function setInputFilter(textbox, inputFilter, errMsg) {
+    function setInputFilter(textbox, inputFilter) {
         ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop", "focusout"].forEach(function(event) {
             textbox.addEventListener(event, function(e) {
                 const specialKeys = ["Backspace", "Delete", "ArrowLeft", "ArrowRight", "Tab"];
@@ -47,6 +47,6 @@ $(document).ready(function () {
     }
 
     setInputFilter(document.getElementById("numeroendAdd"), function(value) {
-        return /^[0-9]*$/.test(value);
+        return /^\d*$/.test(value);
     });
 });
