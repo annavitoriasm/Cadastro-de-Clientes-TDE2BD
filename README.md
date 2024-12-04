@@ -37,10 +37,10 @@ Placeholder.
 
 ## Requisitos
 
-- Tenha o PHP instalado ou qualquer outra ferramenta capaz de hospedar um servidor PHP.
-- Instale o NPM [aqui](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
-- Instale o Composer [aqui](https://getcomposer.org/download/).
-- Ative a extensão `fileinfo` no seu arquivo `php.ini`.
+- Tenha o [PHP](https://www.php.net/manual/en/install.php) instalado ou qualquer outra ferramenta capaz de hospedar um servidor PHP.
+- Instale o [NPM](https://docs.npmjs.com/downloading-and-installing-node-js-and-npm).
+- Instale o [Composer](https://getcomposer.org/download/).
+- Ative as extensões `fileinfo`, `gd` e `zip` no seu arquivo `php.ini`.
 ---
 
 ## Rodando localmente
