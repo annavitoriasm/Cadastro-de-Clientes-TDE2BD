@@ -1,3 +1,15 @@
+let alert = document.getElementById('alertRed');
+
+function showAlert(){
+    alert.classList.remove('hidden');
+    alert.classList.add('flex');
+}
+
+function closeAlert(){
+    alert.classList.add('hidden');
+    alert.classList.remove('flex');
+}
+
 function validateCPF(cpf) {
     cpf = cpf.replace(/[^\d]/g, '');
 
@@ -59,9 +71,10 @@ document.getElementById('formEdit').addEventListener('submit', function(event) {
     let isCPF = input.length == 14;
     let isValid = isCPF ? validateCPF(input) : validateCNPJ(input);
 
-        if (!isValid) {
-            event.preventDefault();
-        }
+    if (!isValid) {
+        showAlert();
+        event.preventDefault();
+    }
 });
 
 document.getElementById('formCreate').addEventListener('submit', function(event) {
@@ -70,7 +83,8 @@ document.getElementById('formCreate').addEventListener('submit', function(event)
     let isCPF = input.length == 14;
     let isValid = isCPF ? validateCPF(input) : validateCNPJ(input);
 
-        if (!isValid) {
-            event.preventDefault();
-        }
+    if (!isValid) {
+        showAlert();
+        event.preventDefault();
+    }
 });
