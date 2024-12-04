@@ -1143,6 +1143,10 @@ input[type="range"]::-ms-fill-lower {
   margin-top: -5px;
 }
 
+.ml-\[-4px\] {
+  margin-left: -4px;
+}
+
 .block {
   display: block;
 }
@@ -1222,6 +1226,10 @@ input[type="range"]::-ms-fill-lower {
 
 .h-screen {
   height: 100vh;
+}
+
+.h-\[230px\] {
+  height: 230px;
 }
 
 .w-1\/2 {
@@ -1311,6 +1319,10 @@ input[type="range"]::-ms-fill-lower {
 
 .w-screen {
   width: 100vw;
+}
+
+.w-\[510px\] {
+  width: 510px;
 }
 
 .min-w-\[100px\] {
@@ -1477,6 +1489,10 @@ input[type="range"]::-ms-fill-lower {
 
 .whitespace-nowrap {
   white-space: nowrap;
+}
+
+.text-nowrap {
+  text-wrap: nowrap;
 }
 
 .rounded {

@@ -55,7 +55,7 @@
 
                     <li id="AC" class="item-menu" onclick="openC()">
                         <a>
-                            <i class="fa-solid fa-square-plus text-[30px] ml-[-7px]"></i>
+                            <i class="fa-solid fa-square-plus text-[30px] ml-[-4px]"></i>
                             <span class="txt ml-[-6px]">Novo Cliente</span>
                         </a>
                     </li>
@@ -424,7 +424,9 @@
                 <div class="flex items-center justify-start gap-3 text-left">
                   <h3 class="text-2xl font-semibold">Editar Cliente:</h3>
 
-                  <label id="clienteNome" class="text-2xl font-bold max-w-[230px] text-left overflow-hidden"></label>
+                  <div class="flex items-center justify-start max-w-[230px] text-left overflow-hidden text-nowrap text-ellipsis">
+                  <label id="clienteNome" class="text-2xl font-bold max-w-[230px] text-left overflow-hidden text-nowrap text-ellipsis"></label>
+                  </div>
 
                   <div class="flex items-center gap-2 mb-[-6px]">
                     <p class="text-1xl font-semibold text-gray-800">ID:</p>
@@ -556,7 +558,10 @@
         </div>
 
         <div class="mb-3 mt-0 flex w-full flex-col items-center justify-center p-10 pb-6 pt-0">
-            <img src="src/public/img/reportGif.gif" class="mb-5 h-[220px] w-[500px] bg-gray-100" alt="instrução relatório">
+            <video class="mb-5 h-[230px] w-[510px]" autoplay loop muted>
+                <source src="src/public/img/reportVideo.mp4" type="video/mp4">
+                Seu navegador não suporta a tag de vídeo.
+            </video>
 
             <p class="w-full text-justify text-sm">CadCli é capaz de executar a exportação de dados a partir de
                 planilhas contendo as informações completas de cada cliente cadastrado. Para isso, clique no
