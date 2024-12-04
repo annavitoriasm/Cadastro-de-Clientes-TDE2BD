@@ -1,9 +1,9 @@
 <div align="center">
-  <img src="https://github.com/annavitoriasm/Cadastro-de-Clientes-TDE2BD/blob/main/src/public/img/CadCli Logo.png" alt="Logo da CadCli" width="400" height="auto">
+  <img src="https://github.com/annavitoriasm/Cadastro-de-Clientes-TDE2BD/blob/main/src/public/img/CadCli Logo.png" alt="Logo da CadCli" width="250" height="auto">
 </div>
 
-# CadCli
-Placeholder.
+# CadCli - Cadastro de Clientes
+O CadCli é um sistema web desenvolvido pensado no gerenciamento simples e eficaz de clientes. Ele permite que usuários registrem informações como nome, CPF, endereço e contato de clientes, além de possibilitar a exportação desses dados em formato Excel, facilitando a geração de relatórios. Ideal para pequenas e médias empresas, o CadCli oferece uma solução prática e acessível para gerenciar informações de clientes sem complexidade, garantindo organização e agilidade nos processos administrativos.
 
 ---
 

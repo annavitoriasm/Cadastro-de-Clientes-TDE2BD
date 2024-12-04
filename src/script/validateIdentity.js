@@ -52,3 +52,25 @@ function validateCNPJ(cnpj) {
 
     return (cnpj[12] == D1 && cnpj[13] == D2);
 }
+
+document.getElementById('formEdit').addEventListener('submit', function(event) {
+    let input = document.getElementById('clienteCPFCNPJ').value;
+
+    let isCPF = input.length == 14;
+    let isValid = isCPF ? validateCPF(input) : validateCNPJ(input);
+
+        if (!isValid) {
+            event.preventDefault();
+        }
+});
+
+document.getElementById('formCreate').addEventListener('submit', function(event) {
+    let input = document.getElementById('cpf_cnpjAdd').value;
+
+    let isCPF = input.length == 14;
+    let isValid = isCPF ? validateCPF(input) : validateCNPJ(input);
+
+        if (!isValid) {
+            event.preventDefault();
+        }
+});

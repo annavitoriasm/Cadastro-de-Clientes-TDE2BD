@@ -308,7 +308,7 @@
                 </button>
             </div>
 
-            <form class="flex-rol justify-center mt-2 p-10 pt-0 pb-6" method="POST" action="index.php?controller=clients&action=add">
+            <form id="formCreate" class="flex-rol justify-center mt-2 p-10 pt-0 pb-6" method="POST" action="index.php?controller=clients&action=add">
 
                     <div class="flex gap-5 mt-5">
                         <div class="relative z-0 w-full mb-5 group">
@@ -439,7 +439,7 @@
                 </button>
             </div>
 
-            <form class="flex-rol justify-center mt-0 p-10 pt-0 pb-6 mb-3" method="POST" action="index.php?controller=clients&action=edit">
+            <form id="formEdit" class="flex-rol justify-center mt-0 p-10 pt-0 pb-6 mb-3" method="POST" action="index.php?controller=clients&action=edit">
             <input type="hidden" name="clienteID" id="clienteID" value="" />
                     <div class="flex gap-5 mt-5">
                         <div class="relative z-0 w-full mb-5 group">
@@ -531,7 +531,7 @@
                     </div>
 
                     <div class="flex justify-end content-end w-full">
-                        <button onclick="closeEd()" type="submit"
+                        <button onclick="closeEd()" type="button"
                             class="rounded-lg px-5 py-2.5 text-center text-sm font-medium text-blackfocus:outline-none sm:w-auto">Cancelar</button>
                         <button type="submit" id="btn-create"
                             class="rounded-lg bg-[rgb(17,17,17)] px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none sm:w-auto">Atualizar</button>
@@ -587,6 +587,7 @@
 <script src="src/script/animationScroll.js"></script>
 <script src="src/script/disableRightClick.js"></script>
 <script src="src/script/sanitizeFields.js"></script>
+<script src="src/script/validateIdentity.js"></script>
 <script src="src/script/viewReport.js"></script>
 <script src="src/script/viewEdit.js"></script>
 </html>
