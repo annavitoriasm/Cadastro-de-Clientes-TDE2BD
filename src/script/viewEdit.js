@@ -7,19 +7,19 @@ function openEd(clientData){
     modalEdit.classList.add('flex');
     containerEdit.classList.add('opDiv');
 
-    document.getElementById("clienteID").innerText = clientData.id;
+    document.getElementById("clienteID1").innerText = clientData.id;
+    document.getElementById("clienteID").value = clientData.id;
     document.getElementById("clienteNome").innerText = clientData.nome;
-    document.getElementById("clienteNome1").innerText = clientData.nome;
-    document.getElementById("clienteCPFCNPJ").innerText = clientData.cpf_cnpj;
-    document.getElementById("clienteEmail").innerText = clientData.email;
-    document.getElementById("clienteContato").innerText = clientData.contato;
-    document.getElementById("clienteCEP").innerText = clientData.cep;
-    document.getElementById("clienteEndereco").innerText = clientData.endereco;
-    document.getElementById("clienteNumEnd").innerText = clientData.numero;
-    document.getElementById("clienteComplemento").innerText = clientData.complemento;
-    document.getElementById("clienteObservacoes").innerText = clientData.observacoes;
-
-    document.getElementById("clienteTipo").value = clientData.pessoa_fisica === "CPF" ? "fisica" : "juridica";
+    document.getElementById("clienteNome1").value = clientData.nome;
+    document.getElementById("clienteTipo").value = clientData.pessoa_fisica;
+    document.getElementById("clienteCPFCNPJ").value = clientData.cpf_cnpj;
+    document.getElementById("clienteEmail").value = clientData.email;
+    document.getElementById("clienteContato").value = clientData.contato;
+    document.getElementById("clienteCEP").value = clientData.cep;
+    document.getElementById("clienteEndereco").value = clientData.endereco;
+    document.getElementById("clienteNumEnd").value = clientData.numero;
+    document.getElementById("clienteComplemento").value = clientData.complemento;
+    document.getElementById("clienteObservacoes").value = clientData.observacoes;
 }
 
 function closeEd(){

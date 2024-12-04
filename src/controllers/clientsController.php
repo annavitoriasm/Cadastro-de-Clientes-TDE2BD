@@ -59,15 +59,26 @@
 
         public function edit()
         {
-            if (isset($_GET['id']) && is_numeric($_GET['id'])) {
-                $id = $_GET['id'];
+            if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
-                # $this->model->editClient($id, $_POST);
+                $params = [
+                    'id' => $_POST['clienteID'],
+                    'nome' => $_POST['clienteNome'],
+                    'pessoa_fisica' => $_POST['clienteTipo'],
+                    'cpf_cnpj' => $_POST['clienteCPFCNPJ'],
+                    'contato' => $_POST['clienteContato'],
+                    'email' => $_POST['clienteEmail'],
+                    'cep' => $_POST['clienteCEP'],
+                    'endereco' => $_POST['clienteEndereco'],
+                    'numero' => $_POST['clienteNumEnd'],
+                    'complemento' => $_POST['clienteComplemento'] ?? '',
+                    'observacoes' => $_POST['clienteObservacoes'] ?? ''
+                ];
+
+                $this->model->editClient($params);
 
                 header('Location: index.php?controller=clients&action=home');
                 exit;
-            } else {
-                header('Location: index.php?controller=clients&action=home');
             }
         }
 

@@ -4,6 +4,10 @@ $(document).ready(function () {
     $('#cepAdd').mask('00000-000');
     $('#cpf_cnpjAdd').mask('000.000.000-00', { reverse: true });
 
+    $('#clienteContato').mask('(00) 00000-0000');
+    $('#clienteCEP').mask('00000-000');
+    $('#clienteCPFCNPJ').mask('000.000.000-00', { reverse: true });
+
     $('#tipoPessoa').change(function () {
         let selectedValue = $(this).val();
 
@@ -14,6 +18,15 @@ $(document).ready(function () {
         }
     });
 
+    $('#clienteTipo').change(function () {
+        let selectedValue = $(this).val();
+
+        if (selectedValue === 'CPF') {
+            $('#clienteCPFCNPJ').unmask().mask('000.000.000-00', { reverse: true });
+        } else if (selectedValue === 'CNPJ') {
+            $('#clienteCPFCNPJ').unmask().mask('00.000.000/0000-00', { reverse: true });
+        }
+    });
     function setInputFilter(textbox, inputFilter) {
         ["input", "keydown", "keyup", "mousedown", "mouseup", "select", "contextmenu", "drop", "focusout"].forEach(function(event) {
             textbox.addEventListener(event, function(e) {
@@ -47,6 +60,10 @@ $(document).ready(function () {
     }
 
     setInputFilter(document.getElementById("numeroendAdd"), function(value) {
+        return /^\d*$/.test(value);
+    });
+
+    setInputFilter(document.getElementById("clienteNumEnd"), function(value) {
         return /^\d*$/.test(value);
     });
 });

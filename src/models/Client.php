@@ -36,7 +36,22 @@
             }
         }
 
-        # public function editClient(int $id, array $params)
+        public function editClient(array $params)
+        {
+            $sql = "
+                UPDATE clients
+                SET nome = :nome, pessoa_fisica = :pessoa_fisica, cpf_cnpj = :cpf_cnpj, contato = :contato, email = :email, cep = :cep, endereco = :endereco, numero = :numero, complemento = :complemento, observacoes = :observacoes
+                WHERE id = :id
+            ";
+
+            $stmt = $this->connection->prepare($sql);
+
+            try {
+                $stmt->execute($params);
+            } catch (PDOException $e) {
+                throw new Exception($e->getMessage());
+            }
+        }
 
         public function deleteClient(int $id)
         {

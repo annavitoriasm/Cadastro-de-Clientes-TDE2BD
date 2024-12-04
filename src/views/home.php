@@ -428,7 +428,7 @@
 
                   <div class="flex items-center gap-2 mb-[-6px]">
                     <p class="text-1xl font-semibold text-gray-800">ID:</p>
-                    <label id="clienteID" class="text-1xl font-semibold text-gray-800"></label>
+                    <label id="clienteID1" class="text-1xl font-semibold text-gray-800"></label>
                   </div>
                 </div>
 
@@ -437,108 +437,99 @@
                 </button>
             </div>
 
-            <form class="flex-rol justify-center mt-0 p-10 pt-0 pb-6 mb-3">
-
+            <form class="flex-rol justify-center mt-0 p-10 pt-0 pb-6 mb-3" method="POST" action="index.php?controller=clients&action=edit">
+            <input type="hidden" name="clienteID" id="clienteID" value="" />
                     <div class="flex gap-5 mt-5">
                         <div class="relative z-0 w-full mb-5 group">
-                            <input type="text" name="nome" id="nome"
+                            <input type="text" name="clienteNome" id="clienteNome1"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
                                 placeholder="" required />
-                            <label id="clienteNome1"
+                            <label
                                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-
-                            </label>
+                            Nome</label>
                         </div>
                         <div class="relative z-0 w-96 mb-5 group">
                             <label class="sr-only">Tipo de Pessoa</label>
-                            <select id="clienteTipo"
+                            <select name = "clienteTipo" id="clienteTipo"
                                 class="block py-2.5 px-0 w-full text-sm text-black bg-transparent border-0 border-b-2 border-gray-800 appearance-none dark:text-black dark:border-gray-700 focus:outline-none focus:ring-0 focus:border-gray-900 peer">
-                                <option value="fisica" class="text-gray-900 border-0">Pessoa Física</option>
-                                <option value="juridica" class="text-gray-900">Pessoa Jurídica</option>
+                                <option value="CPF" class="text-gray-900 border-0">Pessoa Física</option>
+                                <option value="CNPJ" class="text-gray-900">Pessoa Jurídica</option>
                             </select>
                         </div>
                     </div>
                     <div class="flex gap-5">
                         <div class="relative z-0 w-96 mb-5 group">
-                            <input type="text" maxlength="18" oninput="formatDocument(this)" name="cpf_cnpj" id="cpf_cnpj"
+                            <input type="text" name="clienteCPFCNPJ" id="clienteCPFCNPJ"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
                                 placeholder="" required />
-                            <label id="clienteCPFCNPJ"
+                            <label
                                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-
-                            </label>
+                            CPF/CNPJ</label>
                         </div>
                         <div class="relative z-0 w-80 mb-5 group">
-                            <input type="number" name="contato" id="contato"
+                            <input type="text" name="clienteContato" id="clienteContato"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
                                 placeholder="" required />
-                            <label id="clienteContato"
+                            <label
                                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-
-                            </label>
+                            Contato</label>
                         </div>
                         <div class="relative z-0 w-full mb-5 group">
-                            <input type="email" name="email" id="email"
+                            <input type="text" name="clienteEmail" id="clienteEmail"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
                                 placeholder="" required />
-                            <label id="clienteEmail"
+                            <label
                                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-
-                            </label>
+                            Email</label>
                         </div>
                     </div>
                     <div class="flex gap-5">
                         <div class="relative z-0 w-44 mb-5 group">
-                            <input type="text" name="cep" id="cep" maxlength="10" oninput="formatCEP(this)"
+                            <input type="text" name="clienteCEP" id="clienteCEP"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
                                 placeholder="" required />
-                            <label id="clienteCEP"
+                            <label
                                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-
-                            </label>
+                            CEP</label>
                         </div>
                         <div class="relative z-0 w-full mb-5 group">
-                            <input type="text" name="endereco" id="endereco"
+                            <input type="text" name="clienteEndereco" id="clienteEndereco"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
                                 placeholder="" required />
-                            <label id="clienteEndereco"
+                            <label
                                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-
-                            </label>
+                            Endereço</label>
                         </div>
                         <div class="relative z-0 w-28 mb-5 group">
-                            <input type="number" name="numeroend" id="numeroend"
+                            <input type="number" name="clienteNumEnd" id="clienteNumEnd" data-mask="0000"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
-                                placeholder=" " required />
-                            <label id="clienteNumEnd"
+                                placeholder="" required />
+                            <label
                                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-
-                            </label>
+                            Número</label>
                         </div>
                     </div>
                     <div class="flex-rol">
                         <div class="relative z-0 w-full mb-5 group">
-                            <input type="text" name="complementoend" id="complementoend"
+                            <input type="text" name="clienteComplemento" id="clienteComplemento"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
                                 placeholder="" />
-                            <label id="clienteComplemento"
+                            <label
                                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-
-                            </label>
+                            Complemento</label>
                         </div>
                         <div class="relative z-0 w-full mb-5 group">
-                            <input type="text" name="observacoes" id="observacoes"
+                            <input type="text" name="clienteObservacoes" id="clienteObservacoes"
                                 class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
                                 placeholder="" />
-                            <label id="clienteObservacoes"
+                            <label
                                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
-
-                            </label>
+                            Observações</label>
                         </div>
                     </div>
 
                     <div class="flex justify-end content-end w-full">
-                        <button onclick="closeC()" type="submit"
+                        <button onclick="closeEd()" type="submit"
                             class="rounded-lg px-5 py-2.5 text-center text-sm font-medium text-blackfocus:outline-none sm:w-auto">Cancelar</button>
                         <button type="submit" id="btn-create"
                             class="rounded-lg bg-[rgb(17,17,17)] px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none sm:w-auto">Atualizar</button>
