@@ -62,7 +62,7 @@
 
                     <li id="RE" class="item-menu" onclick="openRe()">
                         <a>
-                            <i class="fa-solid fa-newspaper text-[28px] ml-[-7.5px]"></i>
+                            <i class="fa-solid fa-newspaper text-[28px] ml-[-5px]"></i>
                             <span class="txt ml-[-6px]">Relatório</span>
                         </a>
                     </li>
@@ -184,22 +184,8 @@
                                     <div>
                                         <div class="flex mt-6">
                                             <h3 class="text-2xl font-bold"><?= $client['nome'] ?></h3>
-                                            <button id="dropdownDelayButton<?= $client['id'] ?>" data-dropdown-toggle="dropdownDelay" data-dropdown-delay="500" data-dropdown-trigger="hover" class="mt-[-5px] w-11 h-11 rounded-full ml-7 hover:bg-gray-100 transition-colors">
-                                                <i class="fa-solid fa-pen-to-square text-[22px]"></i>
-                                            </button>
-                                            <!-- Dropdown menu -->
-                                            <div id="dropdownDelay" class="z-10 hidden absolute bg-white divide-y divide-gray-100 rounded-lg shadow h-min w-min dark:bg-gray-700">
-                                                <ul class="py-2 pb-0 text-sm text-gray-700 dark:text-gray-200" aria-labelledby="dropdownDelayButton">
-                                                    <li>
-                                                        <a href="#" class="flex ml-[-5px] px-4 py-2 items-center text-center h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Editar</a>
-                                                    </li>
-                                                    <li>
-                                                        <a href="index.php?controller=clients&action=del&id=<?= $client['id'] ?>" class="flex ml-[-5px] px-4 py-2 h-3 hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-white">Excluir</a>
-                                                    </li>
-                                                </ul>
-                                            </div>
                                         </div>
-                                        <div class="flex items-center h-full w-min mt-[-5px]">
+                                        <div class="flex items-center h-full w-min mt-[1px]">
                                             <p class="text-gray-900 font-normal text-sm">ID: </p>
                                             <label id="idCustomer" class="text-gray-900 text-sm ml-1 font-normal"><?= $client['id'] ?></label>
                                         </div>
@@ -347,8 +333,8 @@
                                 Contato</label>
                         </div>
                         <div class="relative z-0 w-full mb-5 group">
-                            <input type="email" name="email" id="email"
-                                class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
+                            <input type="email" name="email" id="email" peer-invalid:visible
+                                class="invalid:text-red-500 block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-black dark:border-gray-600 dark:focus:border-black focus:outline-none focus:ring-0 focus:border-black peer"
                                 placeholder=" " required />
                             <label
                                 class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-black peer-focus:dark:text-black peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">
@@ -568,7 +554,7 @@
                 botão abaixo para gerar seu relatório!</p>
 
             <button onclick="genRe()"
-                class="mt-7 rounded-lg bg-[rgb(17,17,17)] px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none sm:w-auto hover:bg-black transition-all">Exportar
+                class="mt-5 rounded-lg bg-[rgb(17,17,17)] px-5 py-2.5 text-center text-sm font-medium text-white focus:outline-none sm:w-auto hover:bg-black transition-all">Exportar
                 Planilha</button>
         </img>
     </div>
